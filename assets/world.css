@@ -1,0 +1,432 @@
+.world-viewbar {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    padding-top: 15px
+}
+
+.world-viewbar button {
+    font-size: 9px;
+    padding: 5px 8px;
+    border: 1px solid var(--line);
+    border-radius: 3px
+}
+
+.world-viewbar button[aria-pressed=true] {
+    background: var(--ink);
+    color: var(--paper)
+}
+
+.world-source-image {
+    padding: 20px 8px 10px;
+    text-align: center
+}
+
+.world-source-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 550px;
+    margin: auto;
+    border: 1px solid var(--line)
+}
+
+.world-source-image p {
+    font-size: 10px;
+    color: var(--sub);
+    line-height: 1.8;
+    margin-top: 12px
+}
+
+.world-tapes {
+    padding: 0 0 20px;
+    border-top: 1px solid var(--line)
+}
+
+.world-tapes details {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line)
+}
+
+.world-tapes summary {
+    font-size: 11px;
+    cursor: pointer
+}
+
+.world-tapes details>p {
+    font-size: 10px;
+    color: var(--sub);
+    line-height: 1.8;
+    margin: 10px 0
+}
+
+.world-tape {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 4px;
+    margin-top: 12px;
+    direction: ltr
+}
+
+.world-tape-cell {
+    min-width: 0;
+    position: relative;
+    border: 1px solid var(--line);
+    padding: 7px 2px;
+    text-align: center;
+    background: #f5f3e9
+}
+
+.world-tape-cell b {
+    font: 22px serif;
+    display: block;
+    line-height: 1
+}
+
+.world-tape-cell small {
+    display: block;
+    font: 7px var(--mono);
+    color: var(--sub);
+    margin-top: 6px
+}
+
+.world-tape-cell.used {
+    background: #d7dfcc
+}
+
+.world-tape-cell.used b {
+    text-decoration: line-through;
+    text-decoration-color: var(--accent)
+}
+
+.world-tape-cell.dropped {
+    opacity: .4
+}
+
+.world-tape-cell.dropped b {
+    text-decoration: line-through
+}
+
+.world-tape-cell.focused {
+    outline: 2px solid var(--accent);
+    outline-offset: -1px
+}
+
+.world-tape-cell.reused {
+    background: #edd8be;
+    outline: 2px solid var(--accent);
+    outline-offset: -1px
+}
+
+.world-question {
+    padding: 17px;
+    background: var(--soft);
+    margin: 16px 0
+}
+
+.world-question h3 {
+    font-size: 24px;
+    margin: 10px 0
+}
+
+.world-question p {
+    font-size: 10px;
+    color: var(--sub);
+    line-height: 1.8
+}
+
+.world-parameters {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin: 18px 0
+}
+
+.world-parameters span {
+    font-size: 10px;
+    color: var(--sub)
+}
+
+.world-parameters b {
+    display: block;
+    font: 27px var(--serif);
+    color: var(--ink)
+}
+
+.world-controls {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap
+}
+
+.world-controls .button {
+    font-size: 10px;
+    padding: 9px 11px
+}
+
+#world-progress {
+    accent-color: var(--green, var(--ink));
+    padding: 0;
+    margin: 0 0 12px;
+    cursor: pointer
+}
+
+.world-cycle-picker {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+    margin: 10px 0 23px
+}
+
+.world-cycle-picker button {
+    border: 1px solid var(--line);
+    font: 10px var(--mono);
+    padding: 6px
+}
+
+.world-cycle-picker button[aria-pressed=true] {
+    background: var(--ink);
+    color: var(--paper)
+}
+
+.world-cycle-head h3 {
+    font-size: 29px;
+    margin: 9px 0
+}
+
+.world-cycle-head p {
+    font-size: 11px;
+    color: var(--sub);
+    line-height: 1.8;
+    margin-bottom: 15px
+}
+
+.world-pair-legend {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 8px;
+    margin: 15px 0
+}
+
+.world-pair-legend>span:before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: #738c64;
+    margin-right: 5px
+}
+
+.world-pair-legend .recorded:before {
+    background: #a29260
+}
+
+.world-pair-legend .exception:before {
+    background: var(--accent)
+}
+
+.world-operations {
+    margin: 12px 0;
+    max-height: 440px;
+    overflow: auto;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line)
+}
+
+.world-op {
+    display: grid;
+    grid-template-columns: 58px 1fr 26px;
+    gap: 9px;
+    padding: 11px 0;
+    border-bottom: 1px solid var(--line)
+}
+
+.world-op:last-child {
+    border: 0
+}
+
+.world-op .kind {
+    font: 8px var(--mono);
+    color: #4a6b43;
+    overflow-wrap: anywhere
+}
+
+.world-op.recorded .kind {
+    color: #8a7338
+}
+
+.world-op.exception .kind {
+    color: var(--accent)
+}
+
+.world-op .operation {
+    font: 12px var(--mono);
+    overflow-wrap: anywhere
+}
+
+.world-op p {
+    font-size: 9px;
+    line-height: 1.7;
+    color: var(--sub);
+    margin: 5px 0 0
+}
+
+.world-op .result {
+    font: 25px serif;
+    color: var(--ink);
+    text-align: center
+}
+
+.world-output {
+    padding: 17px;
+    background: var(--soft);
+    margin: 18px 0
+}
+
+.world-output>p {
+    font-size: 10px;
+    color: var(--sub);
+    margin-top: 12px
+}
+
+.world-letter-output {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 12px
+}
+
+.world-letter-output>span {
+    padding: 5px 8px;
+    background: var(--paper);
+    font: 23px serif;
+    border-bottom: 2px solid #738c64;
+    min-width: 26px;
+    text-align: center
+}
+
+.world-letter-output>span.recorded {
+    border-color: #aa965f
+}
+
+.world-letter-output>span.exception {
+    border-color: var(--accent)
+}
+
+.world-letter-output small {
+    display: block;
+    font: 7px var(--mono);
+    color: var(--sub);
+    margin-top: 4px
+}
+
+.world-interleave {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin: 14px 0
+}
+
+.world-interleave>span {
+    font: 22px serif;
+    border: 1px solid var(--line);
+    padding: 5px 7px;
+    min-width: 27px;
+    text-align: center
+}
+
+.world-interleave>span:nth-child(even) {
+    background: #dce4d1
+}
+
+.world-interleave small {
+    display: block;
+    font: 7px var(--mono);
+    color: var(--sub);
+    margin-top: 4px
+}
+
+.world-explanation {
+    font-size: 11px;
+    color: var(--sub);
+    line-height: 1.8;
+    margin: 12px 0
+}
+
+.world-verse {
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+    font: 28px/1.9 serif;
+    letter-spacing: 0;
+    padding: 20px;
+    background: var(--soft);
+    margin: 20px 0
+}
+
+.world-strict {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 11px;
+    margin: 20px 0 10px;
+    cursor: pointer
+}
+
+.world-strict input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--accent);
+    flex: none
+}
+
+.world-audit {
+    font-size: 10px;
+    line-height: 1.9;
+    color: var(--sub);
+    border-left: 2px solid var(--accent);
+    padding-left: 12px;
+    margin: 15px 0
+}
+
+.world-init-list {
+    margin: 0;
+    padding: 14px 20px;
+    font-size: 12px;
+    line-height: 2.1;
+    color: var(--sub)
+}
+
+.world-initial-formula {
+    font: 11px/1.9 var(--mono);
+    padding: 12px;
+    white-space: pre-line;
+    background: var(--soft)
+}
+
+@media(max-width:780px) {
+    .world-tape {
+        grid-template-columns: repeat(12, minmax(0, 1fr))
+    }
+
+    .world-tape-cell b {
+        font-size: 19px
+    }
+
+    .world-tape-cell {
+        padding: 6px 1px
+    }
+
+    .world-cycle-picker {
+        grid-template-columns: repeat(6, 1fr)
+    }
+
+    .world-op {
+        grid-template-columns: 52px 1fr 22px;
+        gap: 7px
+    }
+
+    .world-verse {
+        font-size: 25px
+    }
+}

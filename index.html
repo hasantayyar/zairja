@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ece7dc">
+  <meta name="description"
+    content="Turn Alberti's cipher disk, explore Llull's combinatorial wheels, and study the Zā’irja. An interactive companion to the supplied workshop guides.">
+  <title>Circling the Truth | A manuscript lab</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/zairja.css">
+  <link rel="stylesheet" href="assets/world.css">
+  <script src="assets/model.js" defer=""></script>
+  <script src="assets/zairja-model.js" defer=""></script>
+  <script src="assets/world-model.js" defer=""></script>
+  <script src="assets/app.js" defer=""></script>
+  <script src="assets/zairja-app.js" defer=""></script>
+  <script src="assets/world-app.js" defer=""></script>
+  <style>
+    @keyframes rotate360 {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @font-face {
+      font-family: 'Amazon Ember';
+      src: url("chrome-extension://cgdjpilhipecahhcilnafpblkieebhea/fonts/AmazonEmber_Rg.ttf");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Amazon Ember';
+      src: url("chrome-extension://cgdjpilhipecahhcilnafpblkieebhea/fonts/AmazonEmber_Bd.ttf");
+      font-weight: bold;
+      font-style: normal;
+    }
+  </style>
+  <style>
+    @keyframes rotate360 {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @font-face {
+      font-family: 'Amazon Ember';
+      src: url("chrome-extension://cgdjpilhipecahhcilnafpblkieebhea/fonts/AmazonEmber_Rg.ttf");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Amazon Ember';
+      src: url("chrome-extension://cgdjpilhipecahhcilnafpblkieebhea/fonts/AmazonEmber_Bd.ttf");
+      font-weight: bold;
+      font-style: normal;
+    }
+  </style>
+  <style>
+    @keyframes rotate360 {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @font-face {
+      font-family: 'Amazon Ember';
+      src: url("chrome-extension://cgdjpilhipecahhcilnafpblkieebhea/fonts/AmazonEmber_Rg.ttf");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Amazon Ember';
+      src: url("chrome-extension://cgdjpilhipecahhcilnafpblkieebhea/fonts/AmazonEmber_Bd.ttf");
+      font-weight: bold;
+      font-style: normal;
+    }
+  </style>
+  <style>
+    @keyframes rotate360 {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @font-face {
+      font-family: 'Amazon Ember';
+      src: url("chrome-extension://cgdjpilhipecahhcilnafpblkieebhea/fonts/AmazonEmber_Rg.ttf");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Amazon Ember';
+      src: url("chrome-extension://cgdjpilhipecahhcilnafpblkieebhea/fonts/AmazonEmber_Bd.ttf");
+      font-weight: bold;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="masthead"><a class="brand" href="/"
+        aria-label="Circling the Truth home"><svg viewBox="0 0 38 38" aria-hidden="true">
+          <circle cx="19" cy="19" r="17"></circle>
+          <circle cx="19" cy="19" r="11"></circle>
+          <circle cx="19" cy="19" r="4"></circle>
+          <path d="M19 0v38M0 19h38"></path>
+        </svg><span>CIRCLING THE TRUTH</span></a><span class="mast-meta">A MANUSCRIPT LAB <i>01 / 03</i></span><button
+        class="text-button" id="sources-open">The source material <span aria-hidden="true">↗</span></button></header>
+    <main>
+      <section class="introduction">
+        <div>
+          <p class="eyebrow">Letters. Relations. Possibilities.</p>
+          <h1>Turn a circle.<br><em>Change the reading.</em></h1>
+        </div>
+        <p class="intro-copy">A circle can hide a message, connect ideas, or hold a question. Explore three historical
+          methods through the movement of a wheel.</p>
+      </section>
+      <div class="instruments" role="tablist" aria-label="Historical instruments"><button id="tab-alberti" role="tab"
+          aria-controls="panel-alberti" aria-selected="true" data-instrument="alberti" tabindex="0"><span
+            class="tab-index">I</span><span>Alberti’s cipher<small>Encode &amp; decipher</small></span><span
+            class="tab-year">1466</span></button><button id="tab-llull" role="tab" aria-controls="panel-llull"
+          aria-selected="false" data-instrument="llull" tabindex="-1"><span class="tab-index">II</span><span>Llull’s
+            art<small>Combine &amp; consider</small></span><span class="tab-year">MEDIEVAL</span></button><button
+          id="tab-zairja" role="tab" aria-controls="panel-zairja" aria-selected="false" data-instrument="zairja"
+          tabindex="-1"><span class="tab-index">III</span><span>The Zā’irja<small>Compute &amp;
+              inspect</small></span><span class="tab-year">2 VARIANTS</span></button></div>
+      <div class="workbench">
+        <section class="wheel-stage" aria-label="Interactive instrument">
+          <div class="stage-heading"><span class="eyebrow" id="stage-label">Instrument I / Two concentric
+              disks</span><span class="small-badge" id="stage-badge">24 SYMBOLS</span></div>
+          <div id="world-viewbar" class="world-viewbar" hidden=""><button id="world-view-locator"
+              aria-pressed="true">Locator</button><button id="world-view-front" aria-pressed="false">Manuscript
+              front</button><button id="world-view-reverse" aria-pressed="false">Reverse table</button></div>
+          <div class="wheel-mount"><svg id="wheel" viewBox="0 0 640 640" role="img"
+              aria-label="Alberti cipher disk. Use the key controls to rotate the inner disk.">
+              <defs>
+                <pattern id="paper-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+                  <circle cx="1" cy="1" r=".65" fill="#bbb3a1"></circle>
+                </pattern>
+                <filter id="disc-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <fedropshadow dx="0" dy="3" stdDeviation="5" flood-color="#3d3625" flood-opacity=".13"></fedropshadow>
+                </filter>
+              </defs>
+              <rect width="640" height="640" fill="url(#paper-grid)"></rect>
+              <path d="M320 9V631M9 320H631" class="crosshair"></path>
+              <g id="wheel-art">
+                <circle cx="320" cy="320" r="292" fill="#f7f4ea" stroke="#536e59" stroke-width="1.5"
+                  filter="url(#disc-shadow)"></circle>
+                <line x1="320" y1="21" x2="320" y2="10" stroke="#9caa94" stroke-width="1"></line>
+                <line x1="346.0595670815498" y1="22.137785270568088" x2="346.4953457952881" y2="17.156811780109365"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="371.9208051224122" y1="25.542481849349826" x2="372.78904601074686" y2="20.618443084288742"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="397.38689448565367" y1="31.18817793956856" x2="398.6809897111663" y2="26.35854880812326"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="422.26402285437496" y1="39.03190638501343" x2="423.9741235710033" y2="34.33344328108387"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="446.3628602604691" y1="49.01397167604165" x2="448.4759515691726" y2="44.48243274085843"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="469.5" y1="61.058404268452875" x2="475" y2="51.53212482682403" stroke="#9caa94"
+                  stroke-width="1"></line>
+                <line x1="491.4993544689628" y1="75.07353875759145" x2="494.36723665071804" y2="70.9777785361465"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="512.1934952962753" y1="90.95271150742556" x2="515.4074333447079" y2="87.12248929183068"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="531.4249275747777" y1="108.57507242522232" x2="534.9604614807105" y2="105.03953851928958"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="549.0472884925745" y1="127.80650470372476" x2="552.8775107081693" y2="124.59256665529207"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="564.9264612424085" y1="148.50064553103724" x2="569.0222214638535" y2="145.63276334928202"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="578.9415957315472" y1="170.50000000000003" x2="588.467875173176" y2="165.00000000000003"
+                  stroke="#9caa94" stroke-width="1"></line>
+                <line x1="590.9860283239584" y1="193.63713973953088" x2="595.5175672591415" y2="191.52404843082738"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="600.9680936149866" y1="217.73597714562504" x2="605.6665567189161" y2="216.0258764289967"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="608.8118220604315" y1="242.6131055143463" x2="613.6414511918767" y2="241.31901028883368"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="614.4575181506502" y1="268.07919487758784" x2="619.3815569157113" y2="267.2109539892532"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="617.8622147294319" y1="293.9404329184502" x2="622.8431882198906" y2="293.5046542047119"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="619" y1="320" x2="630" y2="320" stroke="#9caa94" stroke-width="1"></line>
+                <line x1="617.8622147294319" y1="346.0595670815498" x2="622.8431882198906" y2="346.4953457952881"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="614.4575181506502" y1="371.92080512241216" x2="619.3815569157113" y2="372.7890460107468"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="608.8118220604315" y1="397.38689448565367" x2="613.6414511918767" y2="398.6809897111663"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="600.9680936149866" y1="422.26402285437496" x2="605.6665567189161" y2="423.9741235710033"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="590.9860283239584" y1="446.3628602604691" x2="595.5175672591415" y2="448.4759515691726"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="578.9415957315472" y1="469.5" x2="588.467875173176" y2="475" stroke="#9caa94"
+                  stroke-width="1"></line>
+                <line x1="564.9264612424085" y1="491.4993544689628" x2="569.0222214638535" y2="494.367236650718"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="549.0472884925745" y1="512.1934952962753" x2="552.8775107081693" y2="515.4074333447079"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="531.4249275747777" y1="531.4249275747777" x2="534.9604614807105" y2="534.9604614807104"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="512.1934952962753" y1="549.0472884925745" x2="515.4074333447079" y2="552.8775107081693"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="491.4993544689628" y1="564.9264612424085" x2="494.36723665071804" y2="569.0222214638535"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="469.5" y1="578.9415957315471" x2="475" y2="588.467875173176" stroke="#9caa94"
+                  stroke-width="1"></line>
+                <line x1="446.3628602604691" y1="590.9860283239584" x2="448.4759515691726" y2="595.5175672591415"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="422.26402285437496" y1="600.9680936149866" x2="423.9741235710033" y2="605.6665567189161"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="397.38689448565367" y1="608.8118220604315" x2="398.6809897111663" y2="613.6414511918767"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="371.9208051224122" y1="614.4575181506502" x2="372.78904601074686" y2="619.3815569157113"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="346.0595670815498" y1="617.8622147294319" x2="346.4953457952881" y2="622.8431882198906"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="320" y1="619" x2="320" y2="630" stroke="#9caa94" stroke-width="1"></line>
+                <line x1="293.9404329184502" y1="617.8622147294319" x2="293.50465420471187" y2="622.8431882198906"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="268.07919487758784" y1="614.4575181506502" x2="267.2109539892532" y2="619.3815569157113"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="242.61310551434627" y1="608.8118220604315" x2="241.31901028883368" y2="613.6414511918767"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="217.73597714562504" y1="600.9680936149866" x2="216.0258764289967" y2="605.6665567189161"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="193.63713973953088" y1="590.9860283239584" x2="191.5240484308274" y2="595.5175672591416"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="170.50000000000006" y1="578.9415957315472" x2="165.00000000000006" y2="588.467875173176"
+                  stroke="#9caa94" stroke-width="1"></line>
+                <line x1="148.5006455310373" y1="564.9264612424085" x2="145.63276334928207" y2="569.0222214638536"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="127.80650470372473" y1="549.0472884925745" x2="124.59256665529205" y2="552.8775107081693"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="108.57507242522232" y1="531.4249275747777" x2="105.03953851928958" y2="534.9604614807105"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="90.95271150742562" y1="512.1934952962753" x2="87.12248929183073" y2="515.407433344708"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="75.0735387575915" y1="491.4993544689629" x2="70.97777853614656" y2="494.3672366507181"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="61.05840426845282" y1="469.5" x2="51.532124826823974" y2="475" stroke="#9caa94"
+                  stroke-width="1"></line>
+                <line x1="49.01397167604165" y1="446.3628602604691" x2="44.48243274085843" y2="448.47595156917265"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="39.03190638501343" y1="422.264022854375" x2="34.33344328108387" y2="423.97412357100336"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="31.188177939568618" y1="397.3868944856538" x2="26.35854880812326" y2="398.6809897111664"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="25.542481849349826" y1="371.92080512241216" x2="20.618443084288742" y2="372.7890460107468"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="22.137785270568088" y1="346.0595670815499" x2="17.156811780109365" y2="346.49534579528824"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="21" y1="320.00000000000006" x2="10" y2="320.00000000000006" stroke="#9caa94" stroke-width="1">
+                </line>
+                <line x1="22.137785270568088" y1="293.94043291845026" x2="17.156811780109365" y2="293.504654204712"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="25.542481849349826" y1="268.0791948775878" x2="20.618443084288742" y2="267.21095398925314"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="31.18817793956856" y1="242.61310551434642" x2="26.358548808123203" y2="241.3190102888338"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="39.03190638501337" y1="217.73597714562507" x2="34.33344328108382" y2="216.02587642899672"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="49.01397167604165" y1="193.63713973953094" x2="44.48243274085837" y2="191.5240484308274"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="61.058404268452875" y1="170.49999999999997" x2="51.53212482682403" y2="164.99999999999997"
+                  stroke="#9caa94" stroke-width="1"></line>
+                <line x1="75.0735387575914" y1="148.5006455310373" x2="70.97777853614642" y2="145.63276334928207"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="90.95271150742556" y1="127.80650470372476" x2="87.12248929183068" y2="124.59256665529207"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="108.57507242522223" y1="108.57507242522232" x2="105.0395385192895" y2="105.03953851928958"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="127.8065047037247" y1="90.95271150742562" x2="124.59256665529199" y2="87.12248929183073"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="148.50064553103712" y1="75.0735387575915" x2="145.6327633492819" y2="70.97777853614656"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="170.49999999999986" y1="61.05840426845293" x2="164.99999999999986" y2="51.53212482682409"
+                  stroke="#9caa94" stroke-width="1"></line>
+                <line x1="193.6371397395307" y1="49.01397167604176" x2="191.5240484308272" y2="44.482432740858485"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="217.73597714562487" y1="39.03190638501343" x2="216.02587642899653" y2="34.33344328108393"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="242.61310551434633" y1="31.18817793956856" x2="241.31901028883374" y2="26.35854880812326"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="268.07919487758784" y1="25.542481849349826" x2="267.2109539892532" y2="20.618443084288742"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <line x1="293.9404329184502" y1="22.137785270568088" x2="293.50465420471187" y2="17.156811780109365"
+                  stroke="#9caa94" stroke-width="0.6"></line>
+                <g data-ring="outer">
+                  <path
+                    d="M 282.53898283284525 35.455324785716414 A 287 287 0 0 1 357.46101716715486 35.455324785716414 L 351.58733851725253 80.07034354753787 A 242 242 0 0 0 288.4126614827476 80.07034354753787 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="A"></path><text x="320" y="55.5"
+                    class="wheel-glyph" transform="rotate(0,320,55.5)">A</text>
+                  <path
+                    d="M 357.46101716715486 35.455324785716414 A 287 287 0 0 1 429.8301450887808 54.84657416926069 L 412.60939063235173 96.42115313226861 A 242 242 0 0 0 351.58733851725253 80.07034354753787 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="B"></path><text x="388.45763742961674"
+                    y="64.51261894654144" class="wheel-glyph"
+                    transform="rotate(15,388.45763742961674,64.51261894654144)">B</text>
+                  <path
+                    d="M 429.8301450887808 54.84657416926069 A 287 287 0 0 1 494.71453012550285 92.3075913364155 L 467.3202658201104 128.0084916495211 A 242 242 0 0 0 412.60939063235173 96.42115313226861 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="C"></path><text x="452.25" y="90.93628069901598"
+                    class="wheel-glyph" transform="rotate(30,452.25,90.93628069901598)">C</text>
+                  <path
+                    d="M 494.71453012550285 92.3075913364155 A 287 287 0 0 1 547.6924086635845 145.28546987449718 L 511.9915083504789 172.6797341798896 A 242 242 0 0 0 467.3202658201104 128.0084916495211 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="D"></path><text x="507.0297436238418"
+                    y="132.9702563761582" class="wheel-glyph"
+                    transform="rotate(45,507.0297436238418,132.9702563761582)">D</text>
+                  <path
+                    d="M 547.6924086635845 145.28546987449718 A 287 287 0 0 1 585.1534258307393 210.16985491121923 L 543.5788468677314 227.39060936764827 A 242 242 0 0 0 511.9915083504789 172.6797341798896 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="E"></path><text x="549.0637193009841"
+                    y="187.75000000000003" class="wheel-glyph"
+                    transform="rotate(60,549.0637193009841,187.75000000000003)">E</text>
+                  <path
+                    d="M 585.1534258307393 210.16985491121923 A 287 287 0 0 1 604.5446752142836 282.5389828328452 L 559.9296564524622 288.4126614827475 A 242 242 0 0 0 543.5788468677314 227.39060936764827 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="F"></path><text x="575.4873810534585"
+                    y="251.54236257038326" class="wheel-glyph"
+                    transform="rotate(75,575.4873810534585,251.54236257038326)">F</text>
+                  <path
+                    d="M 604.5446752142836 282.5389828328452 A 287 287 0 0 1 604.5446752142836 357.4610171671548 L 559.9296564524622 351.5873385172525 A 242 242 0 0 0 559.9296564524622 288.4126614827475 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="G"></path><text x="584.5" y="320"
+                    class="wheel-glyph" transform="rotate(90,584.5,320)">G</text>
+                  <path
+                    d="M 604.5446752142836 357.4610171671548 A 287 287 0 0 1 585.1534258307393 429.8301450887808 L 543.5788468677314 412.60939063235173 A 242 242 0 0 0 559.9296564524622 351.5873385172525 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="I"></path><text x="575.4873810534585"
+                    y="388.45763742961674" class="wheel-glyph"
+                    transform="rotate(105,575.4873810534585,388.45763742961674)">I</text>
+                  <path
+                    d="M 585.1534258307393 429.8301450887808 A 287 287 0 0 1 547.6924086635845 494.71453012550285 L 511.9915083504789 467.3202658201104 A 242 242 0 0 0 543.5788468677314 412.60939063235173 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="L"></path><text x="549.0637193009841" y="452.25"
+                    class="wheel-glyph" transform="rotate(120,549.0637193009841,452.25)">L</text>
+                  <path
+                    d="M 547.6924086635845 494.71453012550285 A 287 287 0 0 1 494.71453012550285 547.6924086635845 L 467.3202658201104 511.9915083504789 A 242 242 0 0 0 511.9915083504789 467.3202658201104 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="M"></path><text x="507.0297436238418"
+                    y="507.0297436238418" class="wheel-glyph"
+                    transform="rotate(135,507.0297436238418,507.0297436238418)">M</text>
+                  <path
+                    d="M 494.71453012550285 547.6924086635845 A 287 287 0 0 1 429.8301450887808 585.1534258307393 L 412.60939063235173 543.5788468677314 A 242 242 0 0 0 467.3202658201104 511.9915083504789 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="N"></path><text x="452.25" y="549.0637193009841"
+                    class="wheel-glyph" transform="rotate(150,452.25,549.0637193009841)">N</text>
+                  <path
+                    d="M 429.8301450887808 585.1534258307393 A 287 287 0 0 1 357.46101716715486 604.5446752142836 L 351.58733851725253 559.9296564524622 A 242 242 0 0 0 412.60939063235173 543.5788468677314 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="O"></path><text x="388.45763742961674"
+                    y="575.4873810534585" class="wheel-glyph"
+                    transform="rotate(165,388.45763742961674,575.4873810534585)">O</text>
+                  <path
+                    d="M 357.46101716715486 604.5446752142836 A 287 287 0 0 1 282.53898283284525 604.5446752142836 L 288.4126614827476 559.9296564524622 A 242 242 0 0 0 351.58733851725253 559.9296564524622 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="P"></path><text x="320" y="584.5"
+                    class="wheel-glyph" transform="rotate(180,320,584.5)">P</text>
+                  <path
+                    d="M 282.53898283284525 604.5446752142836 A 287 287 0 0 1 210.16985491121926 585.1534258307393 L 227.39060936764827 543.5788468677314 A 242 242 0 0 0 288.4126614827476 559.9296564524622 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="Q"></path><text x="251.54236257038323"
+                    y="575.4873810534585" class="wheel-glyph"
+                    transform="rotate(195,251.54236257038323,575.4873810534585)">Q</text>
+                  <path
+                    d="M 210.16985491121926 585.1534258307393 A 287 287 0 0 1 145.28546987449718 547.6924086635845 L 172.6797341798896 511.9915083504789 A 242 242 0 0 0 227.39060936764827 543.5788468677314 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="R"></path><text x="187.75000000000006"
+                    y="549.0637193009841" class="wheel-glyph"
+                    transform="rotate(210,187.75000000000006,549.0637193009841)">R</text>
+                  <path
+                    d="M 145.28546987449718 547.6924086635845 A 287 287 0 0 1 92.30759133641547 494.71453012550273 L 128.00849164952106 467.3202658201103 A 242 242 0 0 0 172.6797341798896 511.9915083504789 Z"
+                    class="wheel-sector selected" data-ring="outer" data-symbol="S"></path><text x="132.9702563761582"
+                    y="507.0297436238418" class="wheel-glyph"
+                    transform="rotate(225,132.9702563761582,507.0297436238418)">S</text>
+                  <path
+                    d="M 92.30759133641547 494.71453012550273 A 287 287 0 0 1 54.84657416926069 429.8301450887808 L 96.42115313226861 412.60939063235173 A 242 242 0 0 0 128.00849164952106 467.3202658201103 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="T"></path><text x="90.93628069901595" y="452.25"
+                    class="wheel-glyph" transform="rotate(240,90.93628069901595,452.25)">T</text>
+                  <path
+                    d="M 54.84657416926069 429.8301450887808 A 287 287 0 0 1 35.455324785716414 357.4610171671548 L 80.07034354753787 351.5873385172525 A 242 242 0 0 0 96.42115313226861 412.60939063235173 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="V"></path><text x="64.51261894654147"
+                    y="388.4576374296168" class="wheel-glyph"
+                    transform="rotate(255,64.51261894654147,388.4576374296168)">V</text>
+                  <path
+                    d="M 35.455324785716414 357.4610171671548 A 287 287 0 0 1 35.455324785716414 282.53898283284525 L 80.07034354753787 288.4126614827476 A 242 242 0 0 0 80.07034354753787 351.5873385172525 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="X"></path><text x="55.5" y="320.00000000000006"
+                    class="wheel-glyph" transform="rotate(270,55.5,320.00000000000006)">X</text>
+                  <path
+                    d="M 35.455324785716414 282.53898283284525 A 287 287 0 0 1 54.846574169260634 210.16985491121937 L 96.42115313226856 227.3906093676484 A 242 242 0 0 0 80.07034354753787 288.4126614827476 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="Z"></path><text x="64.51261894654141"
+                    y="251.54236257038337" class="wheel-glyph"
+                    transform="rotate(285,64.51261894654141,251.54236257038337)">Z</text>
+                  <path
+                    d="M 54.846574169260634 210.16985491121937 A 287 287 0 0 1 92.3075913364155 145.28546987449718 L 128.0084916495211 172.6797341798896 A 242 242 0 0 0 96.42115313226856 227.3906093676484 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="1"></path><text x="90.93628069901598"
+                    y="187.74999999999997" class="wheel-glyph"
+                    transform="rotate(300,90.93628069901598,187.74999999999997)">1</text>
+                  <path
+                    d="M 92.3075913364155 145.28546987449718 A 287 287 0 0 1 145.2854698744971 92.30759133641558 L 172.67973417988955 128.00849164952115 A 242 242 0 0 0 128.0084916495211 172.6797341798896 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="2"></path><text x="132.97025637615815"
+                    y="132.9702563761582" class="wheel-glyph"
+                    transform="rotate(315,132.97025637615815,132.9702563761582)">2</text>
+                  <path
+                    d="M 145.2854698744971 92.30759133641558 A 287 287 0 0 1 210.16985491121932 54.84657416926069 L 227.39060936764832 96.42115313226859 A 242 242 0 0 0 172.67973417988955 128.00849164952115 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="3"></path><text x="187.7499999999999"
+                    y="90.93628069901604" class="wheel-glyph"
+                    transform="rotate(330,187.7499999999999,90.93628069901604)">3</text>
+                  <path
+                    d="M 210.16985491121932 54.84657416926069 A 287 287 0 0 1 282.5389828328452 35.455324785716414 L 288.4126614827475 80.07034354753787 A 242 242 0 0 0 227.39060936764832 96.42115313226859 Z"
+                    class="wheel-sector" data-ring="outer" data-symbol="4"></path><text x="251.5423625703833"
+                    y="64.51261894654144" class="wheel-glyph"
+                    transform="rotate(345,251.5423625703833,64.51261894654144)">4</text>
+                </g>
+                <g data-ring="inner">
+                  <path
+                    d="M 289.06529244384785 85.02756785440693 A 237 237 0 0 1 350.93470755615226 85.02756785440695 L 343.62524079182936 140.5484800913403 A 181 181 0 0 0 296.3747592081707 140.5484800913403 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="g"></path><text x="320" y="111"
+                    class="wheel-glyph small" transform="rotate(0,320,111)">g</text>
+                  <path
+                    d="M 350.93470755615226 85.02756785440695 A 237 237 0 0 1 410.69597347052627 101.04055079482504 L 389.26570125808126 152.77780461545711 A 181 181 0 0 0 343.62524079182936 140.5484800913403 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="k"></path><text
+                    x="374.09318042642684" y="118.12150230558473" class="wheel-glyph small"
+                    transform="rotate(15,374.09318042642684,118.12150230558473)">k</text>
+                  <path
+                    d="M 410.69597347052627 101.04055079482504 A 237 237 0 0 1 464.2764586750668 131.97525835097727 L 430.1858186505784 176.40304540728644 A 181 181 0 0 0 389.26570125808126 152.77780461545711 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="l"></path><text x="424.5"
+                    y="139.00069060905233" class="wheel-glyph small"
+                    transform="rotate(30,424.5,139.00069060905233)">l</text>
+                  <path
+                    d="M 464.2764586750668 131.97525835097727 A 237 237 0 0 1 508.02474164902276 175.7235413249332 L 463.5969545927136 209.81418134942157 A 181 181 0 0 0 430.1858186505784 176.40304540728644 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="n"></path><text
+                    x="467.78531726798843" y="172.21468273201157" class="wheel-glyph small"
+                    transform="rotate(45,467.78531726798843,172.21468273201157)">n</text>
+                  <path
+                    d="M 508.02474164902276 175.7235413249332 A 237 237 0 0 1 538.9594492051749 229.30402652947373 L 487.2221953845429 250.73429874191874 A 181 181 0 0 0 463.5969545927136 209.81418134942157 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="p"></path><text
+                    x="500.9993093909477" y="215.5" class="wheel-glyph small"
+                    transform="rotate(60,500.9993093909477,215.5)">p</text>
+                  <path
+                    d="M 538.9594492051749 229.30402652947373 A 237 237 0 0 1 554.9724321455931 289.0652924438478 L 499.4515199086597 296.37475920817064 A 181 181 0 0 0 487.2221953845429 250.73429874191874 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="r"></path><text
+                    x="521.8784976944153" y="265.90681957357316" class="wheel-glyph small"
+                    transform="rotate(75,521.8784976944153,265.90681957357316)">r</text>
+                  <path
+                    d="M 554.9724321455931 289.0652924438478 A 237 237 0 0 1 554.9724321455931 350.9347075561522 L 499.4515199086597 343.62524079182936 A 181 181 0 0 0 499.4515199086597 296.37475920817064 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="t"></path><text x="529" y="320"
+                    class="wheel-glyph small" transform="rotate(90,529,320)">t</text>
+                  <path
+                    d="M 554.9724321455931 350.9347075561522 A 237 237 0 0 1 538.9594492051749 410.69597347052627 L 487.2221953845429 389.26570125808126 A 181 181 0 0 0 499.4515199086597 343.62524079182936 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="v"></path><text
+                    x="521.8784976944153" y="374.09318042642684" class="wheel-glyph small"
+                    transform="rotate(105,521.8784976944153,374.09318042642684)">v</text>
+                  <path
+                    d="M 538.9594492051749 410.69597347052627 A 237 237 0 0 1 508.02474164902276 464.2764586750668 L 463.5969545927136 430.1858186505784 A 181 181 0 0 0 487.2221953845429 389.26570125808126 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="z"></path><text
+                    x="500.9993093909477" y="424.5" class="wheel-glyph small"
+                    transform="rotate(120,500.9993093909477,424.5)">z</text>
+                  <path
+                    d="M 508.02474164902276 464.2764586750668 A 237 237 0 0 1 464.2764586750668 508.02474164902276 L 430.1858186505784 463.5969545927136 A 181 181 0 0 0 463.5969545927136 430.1858186505784 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="&amp;"></path><text
+                    x="467.78531726798843" y="467.78531726798843" class="wheel-glyph small"
+                    transform="rotate(135,467.78531726798843,467.78531726798843)">&amp;</text>
+                  <path
+                    d="M 464.2764586750668 508.02474164902276 A 237 237 0 0 1 410.69597347052627 538.9594492051749 L 389.26570125808126 487.2221953845429 A 181 181 0 0 0 430.1858186505784 463.5969545927136 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="x"></path><text x="424.5"
+                    y="500.9993093909477" class="wheel-glyph small"
+                    transform="rotate(150,424.5,500.9993093909477)">x</text>
+                  <path
+                    d="M 410.69597347052627 538.9594492051749 A 237 237 0 0 1 350.93470755615226 554.9724321455931 L 343.62524079182936 499.4515199086597 A 181 181 0 0 0 389.26570125808126 487.2221953845429 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="y"></path><text
+                    x="374.09318042642684" y="521.8784976944153" class="wheel-glyph small"
+                    transform="rotate(165,374.09318042642684,521.8784976944153)">y</text>
+                  <path
+                    d="M 350.93470755615226 554.9724321455931 A 237 237 0 0 1 289.06529244384785 554.9724321455931 L 296.3747592081707 499.4515199086597 A 181 181 0 0 0 343.62524079182936 499.4515199086597 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="s"></path><text x="320" y="529"
+                    class="wheel-glyph small" transform="rotate(180,320,529)">s</text>
+                  <path
+                    d="M 289.06529244384785 554.9724321455931 A 237 237 0 0 1 229.30402652947373 538.9594492051749 L 250.73429874191876 487.2221953845429 A 181 181 0 0 0 296.3747592081707 499.4515199086597 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="o"></path><text
+                    x="265.90681957357316" y="521.8784976944153" class="wheel-glyph small"
+                    transform="rotate(195,265.90681957357316,521.8784976944153)">o</text>
+                  <path
+                    d="M 229.30402652947373 538.9594492051749 A 237 237 0 0 1 175.7235413249332 508.02474164902276 L 209.81418134942157 463.5969545927136 A 181 181 0 0 0 250.73429874191876 487.2221953845429 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="m"></path><text
+                    x="215.50000000000006" y="500.9993093909477" class="wheel-glyph small"
+                    transform="rotate(210,215.50000000000006,500.9993093909477)">m</text>
+                  <path
+                    d="M 175.7235413249332 508.02474164902276 A 237 237 0 0 1 131.97525835097724 464.27645867506675 L 176.4030454072864 430.1858186505784 A 181 181 0 0 0 209.81418134942157 463.5969545927136 Z"
+                    class="wheel-sector inner selected" data-ring="inner" data-symbol-inner="q"></path><text
+                    x="172.21468273201157" y="467.78531726798843" class="wheel-glyph small white"
+                    transform="rotate(225,172.21468273201157,467.78531726798843)">q</text>
+                  <path
+                    d="M 131.97525835097724 464.27645867506675 A 237 237 0 0 1 101.04055079482504 410.6959734705263 L 152.77780461545711 389.26570125808126 A 181 181 0 0 0 176.4030454072864 430.1858186505784 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="i"></path><text
+                    x="139.0006906090523" y="424.5" class="wheel-glyph small"
+                    transform="rotate(240,139.0006906090523,424.5)">i</text>
+                  <path
+                    d="M 101.04055079482504 410.6959734705263 A 237 237 0 0 1 85.02756785440695 350.9347075561522 L 140.5484800913403 343.62524079182936 A 181 181 0 0 0 152.77780461545711 389.26570125808126 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="h"></path><text
+                    x="118.12150230558476" y="374.0931804264269" class="wheel-glyph small"
+                    transform="rotate(255,118.12150230558476,374.0931804264269)">h</text>
+                  <path
+                    d="M 85.02756785440695 350.9347075561522 A 237 237 0 0 1 85.02756785440693 289.06529244384785 L 140.5484800913403 296.3747592081707 A 181 181 0 0 0 140.5484800913403 343.62524079182936 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="f"></path><text x="111" y="320"
+                    class="wheel-glyph small" transform="rotate(270,111,320)">f</text>
+                  <path
+                    d="M 85.02756785440693 289.06529244384785 A 237 237 0 0 1 101.04055079482498 229.30402652947384 L 152.77780461545706 250.73429874191885 A 181 181 0 0 0 140.5484800913403 296.3747592081707 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="d"></path><text
+                    x="118.1215023055847" y="265.9068195735732" class="wheel-glyph small"
+                    transform="rotate(285,118.1215023055847,265.9068195735732)">d</text>
+                  <path
+                    d="M 101.04055079482498 229.30402652947384 A 237 237 0 0 1 131.97525835097727 175.7235413249332 L 176.40304540728644 209.81418134942157 A 181 181 0 0 0 152.77780461545706 250.73429874191885 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="b"></path><text
+                    x="139.00069060905233" y="215.49999999999997" class="wheel-glyph small"
+                    transform="rotate(300,139.00069060905233,215.49999999999997)">b</text>
+                  <path
+                    d="M 131.97525835097727 175.7235413249332 A 237 237 0 0 1 175.72354132493317 131.97525835097733 L 209.81418134942152 176.40304540728647 A 181 181 0 0 0 176.40304540728644 209.81418134942157 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="a"></path><text
+                    x="172.21468273201154" y="172.21468273201157" class="wheel-glyph small"
+                    transform="rotate(315,172.21468273201154,172.21468273201157)">a</text>
+                  <path
+                    d="M 175.72354132493317 131.97525835097733 A 237 237 0 0 1 229.3040265294738 101.04055079482501 L 250.7342987419188 152.7778046154571 A 181 181 0 0 0 209.81418134942152 176.40304540728647 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="c"></path><text
+                    x="215.4999999999999" y="139.00069060905238" class="wheel-glyph small"
+                    transform="rotate(330,215.4999999999999,139.00069060905238)">c</text>
+                  <path
+                    d="M 229.3040265294738 101.04055079482501 A 237 237 0 0 1 289.06529244384774 85.02756785440695 L 296.37475920817064 140.5484800913403 A 181 181 0 0 0 250.7342987419188 152.7778046154571 Z"
+                    class="wheel-sector inner" data-ring="inner" data-symbol-inner="e"></path><text
+                    x="265.9068195735732" y="118.12150230558473" class="wheel-glyph small"
+                    transform="rotate(345,265.9068195735732,118.12150230558473)">e</text>
+                </g>
+                <circle cx="111.4034995499685" cy="528.5965004500315" r="4" fill="#ac593b"></circle>
+                <circle cx="320" cy="320" r="139" fill="none" stroke="#a9b69c" stroke-width="0.7"
+                  stroke-dasharray="2 6"></circle><text x="320" y="270" class="svg-center-word">A CHANGE OF
+                  ALPHABET</text><text x="320" y="331" class="svg-pair">S / q</text><text x="320" y="369"
+                  class="svg-label">B ↔ k · 0 / 24</text>
+                <circle cx="320" cy="405" r="3" fill="#ac593b"></circle>
+              </g>
+            </svg>
+            <div id="world-source-image" class="world-source-image" hidden=""><a id="world-source-full"
+                href="assets/world-front.jpeg" target="_blank" rel="noopener"><img id="world-image"
+                  src="./assets/world-front.jpeg"
+                  alt="The world-wheel in MS Ahmet III 3042, reproduced in Link’s study."></a>
+              <p id="world-image-caption"></p>
+            </div>
+            <div id="z-table-mount" class="z-table-mount" hidden="">
+              <div class="z-table-toolbar"><span>LANE’S ENGLISH TABLE / 100 CELLS</span><span id="z-cell-location">ROW 6
+                  / COL 4</span></div>
+              <div id="z-table" class="z-table" role="group"
+                aria-label="Choose a starting square in Lane’s 100-cell Zā’irja table"></div>
+              <p class="z-table-caption">Select a square. Move five cells forward each time, wrapping at 100. The marked
+                cells contain one of five stored sentences. The outline marks your starting square; ↑ marks the
+                sentence’s first letter.</p>
+            </div>
+          </div>
+          <div class="wheel-legend" id="wheel-legend"><span><i class="legend-line"></i>Outer disk / plain
+              text</span><span><i class="legend-line accent"></i>Inner disk / cipher text</span></div>
+          <div class="wheel-controls" id="wheel-controls"><button id="rotate-left"
+              aria-label="Rotate the inner disk one position counterclockwise">↶</button>
+            <p id="wheel-hint">Drag the inner ring to turn it.<br><span>Click an outer letter to inspect its
+                pair.</span></p><button id="rotate-right"
+              aria-label="Rotate the inner disk one position clockwise">↷</button>
+          </div>
+          <div class="reading-strip" aria-live="polite"><span class="eyebrow" id="reading-label">At the selected
+              position</span><strong id="reading-value">S <span>↔</span> q</strong><span id="reading-detail">Plain text
+              → cipher text · Bk</span></div>
+          <div id="world-tapes" class="world-tapes" hidden="">
+            <details open="">
+              <summary>Chord tape / 73 letters</summary>
+              <p>Selected from Sagittarius, Gemini, and Aquarius in the account. Numbering follows its recorded
+                sequence. A crossed-out cell has been removed.</p>
+              <div id="world-chords" class="world-tape"></div>
+            </details>
+            <details>
+              <summary>Key poem / 41 indexed letters</summary>
+              <p>Positions are counted from the beginning. Unlike chord letters, poem letters remain available after
+                use.</p>
+              <div id="world-poem" class="world-tape"></div>
+            </details>
+            <details>
+              <summary>Question / 20 recorded letters</summary>
+              <div id="world-question-letters" class="world-tape"></div>
+              <p>This is the recorded letter sequence, not an automatic transliteration of the English question.</p>
+            </details>
+          </div>
+        </section>
+        <div class="desk">
+          <section id="panel-alberti" class="instrument-panel" role="tabpanel" aria-labelledby="tab-alberti">
+            <div class="panel-top">
+              <p class="eyebrow">Leon Battista Alberti</p><span class="source-tag">WORKING RECONSTRUCTION</span>
+            </div>
+            <h2>A message in<br>another alphabet.</h2>
+            <p class="body-copy">Align two letters. Each outer symbol takes the place of the inner symbol beside it.
+              Turn the inner disk to change the alphabet.</p>
+            <div class="segmented" role="group" aria-label="Cipher direction"><button id="mode-encode"
+                aria-pressed="true">Encipher</button><button id="mode-decode" aria-pressed="false">Decipher</button>
+            </div>
+            <div class="key-grid" id="key-controls"><label>Outer reference<select id="reference"
+                  aria-label="Outer reference letter">
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                  <option value="D">D</option>
+                  <option value="E">E</option>
+                  <option value="F">F</option>
+                  <option value="G">G</option>
+                  <option value="I">I</option>
+                  <option value="L">L</option>
+                  <option value="M">M</option>
+                  <option value="N">N</option>
+                  <option value="O">O</option>
+                  <option value="P">P</option>
+                  <option value="Q">Q</option>
+                  <option value="R">R</option>
+                  <option value="S">S</option>
+                  <option value="T">T</option>
+                  <option value="V">V</option>
+                  <option value="X">X</option>
+                  <option value="Z">Z</option>
+                </select></label>
+              <div class="key-link" aria-hidden="true">↔</div><label>Inner index<select id="index"
+                  aria-label="Inner index letter">
+                  <option value="g">g</option>
+                  <option value="k">k</option>
+                  <option value="l">l</option>
+                  <option value="n">n</option>
+                  <option value="p">p</option>
+                  <option value="r">r</option>
+                  <option value="t">t</option>
+                  <option value="v">v</option>
+                  <option value="z">z</option>
+                  <option value="&amp;">&amp;</option>
+                  <option value="x">x</option>
+                  <option value="y">y</option>
+                  <option value="s">s</option>
+                  <option value="o">o</option>
+                  <option value="m">m</option>
+                  <option value="q">q</option>
+                  <option value="i">i</option>
+                  <option value="h">h</option>
+                  <option value="f">f</option>
+                  <option value="d">d</option>
+                  <option value="b">b</option>
+                  <option value="a">a</option>
+                  <option value="c">c</option>
+                  <option value="e">e</option>
+                </select></label>
+              <div class="key-label"><span class="eyebrow">KEY MARKER</span><strong id="key-marker">Bk</strong></div>
+            </div>
+            <label class="field-label" id="message-label" for="message">Your plain text</label><textarea id="message"
+              maxlength="5000" rows="3" spellcheck="false" placeholder="Write a message…">SALVE</textarea>
+            <p class="input-note" id="input-note">The guide’s alphabet merges J with I and U with V. Spaces and
+              punctuation are omitted. W is not on this disk.</p>
+            <p id="cipher-error" class="error" role="alert" hidden=""></p>
+            <div id="segments-bar" class="segments-bar" hidden=""><span class="eyebrow">KEPT SEGMENTS</span>
+              <div id="segments"></div><button class="text-button" id="remove-segment">Remove last</button>
+            </div>
+            <div class="output-box">
+              <div class="output-top"><span class="eyebrow" id="output-label">Your cipher text</span><button
+                  class="text-button" id="copy-result">Copy <span aria-hidden="true">↗</span></button></div><output
+                id="cipher-output" aria-live="polite">Bkqgzhp</output>
+              <p id="output-context">Bk records the alignment. The letters after it carry your message.</p>
+            </div>
+            <div class="button-row" id="encode-actions"><button class="button dark" id="keep-segment">Keep segment &amp;
+                turn <span aria-hidden="true">↗</span></button><button class="button" id="clear-cipher">Clear</button>
+            </div>
+            <div class="example-row"><span class="eyebrow">FROM THE GUIDE</span><button
+                id="example-salve">SALVE</button><button id="example-switch">Change the key</button><button
+                id="example-challenge">The challenge</button></div>
+            <details class="guide-note">
+              <summary>Read the method</summary>
+              <ol>
+                <li>Choose an outer reference and an inner index. Align them.</li>
+                <li>Write the two symbols first, for example <code>Bk</code>.</li>
+                <li>Replace each outer plain-text symbol with its inner partner.</li>
+                <li>To change the key, insert a new uppercase reference followed by its inner index.</li>
+              </ol>
+              <p><code>BkqgzhpR&amp;adexd&amp;e</code> deciphers to <code>SALVECAESARE</code>. The second marker changes
+                the alphabet mid-message.</p>
+              <p>This is a historical learning tool. Use modern cryptography for private information.</p><a
+                href="https://web.archive.org/web/20250808121950/https://www.torch.ox.ac.uk/files/cipherdiskinstructionspdf"
+                target="_blank" rel="noopener">Read the original instructions ↗</a>
+            </details>
+          </section>
+          <section id="panel-llull" class="instrument-panel" role="tabpanel" aria-labelledby="tab-llull" hidden="">
+            <div class="panel-top">
+              <p class="eyebrow">Ramon Llull</p><span class="source-tag">THE FOURTH FIGURE</span>
+            </div>
+            <h2>A small alphabet.<br>Many relationships.</h2>
+            <p class="body-copy">The outer circle stays fixed. The two inner circles turn. Nine letters stand for terms
+              in six groups. Choose a group for each ring and read the aligned letters.</p>
+            <div class="llull-readings" id="llull-readings"></div>
+            <div class="ring-buttons">
+              <div><span class="eyebrow">Middle ring</span><button id="middle-left"
+                  aria-label="Turn Llull middle ring counterclockwise">↶</button><button id="middle-right"
+                  aria-label="Turn Llull middle ring clockwise">↷</button></div>
+              <div><span class="eyebrow">Inner ring</span><button id="inner-left"
+                  aria-label="Turn Llull inner ring counterclockwise">↶</button><button id="inner-right"
+                  aria-label="Turn Llull inner ring clockwise">↷</button></div><button class="button dark"
+                id="llull-random">New alignment ↗</button>
+            </div>
+            <div class="thought-box"><span class="eyebrow">A question to investigate</span>
+              <h3 id="llull-question"></h3>
+              <p>The wheel proposes a relationship. Your reasoning must establish whether it makes sense.</p>
+            </div><label class="field-label" for="reflection">What relationship do you see?</label><textarea
+              id="reflection" maxlength="3000" rows="3"
+              placeholder="Describe the connection. What could test or challenge it?"></textarea>
+            <div class="button-row"><button class="button dark" id="save-reading">Keep this reading</button><button
+                class="button" id="export-readings">Export readings</button></div>
+            <details class="guide-note">
+              <summary>What this model reproduces</summary>
+              <p>The nine-letter alphabet, the six term groups, and the fixed outer circle with two moving inner circles
+                follow slides 5 and 9.</p>
+              <p>The group selectors and question prompts are modern reading aids. This app does not implement the full
+                logical rules of Llull’s Art.</p><a
+                href="https://www.torch.ox.ac.uk/files/writingtechnologiesworkshoppppdf#page=5"
+                target="_blank" rel="noopener">See the terms in the guide ↗</a>
+            </details>
+            <div id="saved-readings" class="saved-readings"></div>
+          </section>
+          <section id="panel-zairja" class="instrument-panel" role="tabpanel" aria-labelledby="tab-zairja" hidden="">
+            <div class="z-variant-picker" role="group" aria-label="Zā’irja variants"><button id="z-mode-lane"
+                aria-pressed="true">Working table</button><button id="z-mode-medieval" aria-pressed="false">Medieval
+                arithmetic</button><button id="z-mode-guide" aria-pressed="false">Source guide</button><button
+                id="z-mode-world" aria-pressed="false">Ibn Khaldūn’s world-wheel</button></div>
+            <div id="z-lane">
+              <div class="panel-top">
+                <p class="eyebrow">Edward William Lane / Egyptian Záïrgeh</p><span class="source-tag">COMPLETE TABLE
+                  METHOD</span>
+              </div>
+              <h2>One hundred cells.<br>Five hidden sentences.</h2>
+              <p class="body-copy">This later variant has a complete procedure. Its letters and counting rule can be
+                reproduced exactly. The displayed English table is Lane’s own translation, not the medieval world-wheel.
+              </p>
+              <label class="field-label" for="z-lane-question">Keep a question in mind</label><input
+                id="z-lane-question" maxlength="200" placeholder="A question to reflect on…">
+              <p class="input-note">Your question is a personal prompt. It does not enter the calculation. The starting
+                square determines the stored sentence.</p>
+              <div class="button-row"><button class="button dark" id="z-random">Choose an unseen square
+                  ↗</button><button class="button" id="z-lane-example">Lane’s worked example</button></div>
+              <div class="z-result-box"><span class="eyebrow">Sentence stored in this route</span>
+                <h3 id="z-answer"></h3><span class="eyebrow">Letters collected so far</span><code
+                  id="z-collected"></code>
+                <p id="z-result-context" class="z-context-note"></p>
+              </div>
+              <div class="z-run-controls"><button class="button" id="z-back"
+                  aria-label="Previous table step">←</button><button class="button dark" id="z-play">Play the
+                  route</button><button class="button" id="z-forward" aria-label="Next table step">→</button><button
+                  class="button" id="z-show-all">Show all 20</button><span class="eyebrow" id="z-progress">01 /
+                  20</span></div>
+              <div class="z-trace" id="z-lane-trace" aria-label="Twenty-letter extraction route"></div>
+              <div class="z-formula">next cell = (current cell + 5) mod 100<br>100 ÷ gcd(100, 5) = 20 visits per route
+              </div>
+              <details class="guide-note">
+                <summary>Show all five outcomes</summary>
+                <div id="z-outcomes" class="z-outcomes"></div>
+                <p>There are five disjoint routes. Each contains twenty squares. With an unbiased random square, each
+                  sentence has a 1 in 5 chance.</p>
+              </details>
+              <div class="button-row"><button class="button" id="z-export">Export this run</button></div>
+              <details class="guide-note">
+                <summary>Source and reading rule</summary>
+                <p>Lane describes the practice and prints an English translation of its table. His worked example starts
+                  at e in row six and collects enjoypeaceabstainand. Reading from the leftmost visited cell in the top
+                  row gives the sentence shown above.</p>
+                <p>The interface supplies animation, cell numbers, and random selection. These are modern controls
+                  around the documented table method.</p><a
+                  href="https://www.gutenberg.org/cache/epub/70796/pg70796-images.html#Page_239" target="_blank"
+                  rel="noopener">Lane, chapter XI, pp. 239–240 in this edition ↗</a>
+              </details>
+            </div>
+            <div id="z-medieval" hidden="">
+              <div class="panel-top">
+                <p class="eyebrow">Ibn Khaldūn / David Link’s reconstruction</p><span class="source-tag">SUPPORTED PARTS
+                  ONLY</span>
+              </div>
+              <h2>The arithmetic<br>behind the wheel.</h2>
+              <p class="body-copy">Calculate Western abjad values and the twelve principal cycle numbers. These
+                operations are specified. The missing reverse-table rules prevent a verified end-to-end medieval answer
+                generator.</p>
+              <label class="field-label" for="z-abjad-input">Arabic text for letter values</label><input
+                id="z-abjad-input" dir="auto" maxlength="160" value="هل تمطر غدا">
+              <p class="input-note">Western values from Link’s figure 2. Spelling policy: alif forms → ا, ؤ → و, ئ and ى
+                → ي, ة → ت. Vowel marks are removed; doubled consonants are not inferred.</p>
+              <div id="z-abjad-error" class="error" role="alert" hidden="">No value is assigned to: . The displayed sum
+                includes supported Arabic letters only.</div>
+              <div id="z-abjad-values" class="z-values" dir="rtl"><span
+                  class="z-value"><b>ه</b><small>5</small></span><span
+                  class="z-value"><b>ل</b><small>30</small></span><span
+                  class="z-value"><b>ت</b><small>400</small></span><span
+                  class="z-value"><b>م</b><small>40</small></span><span
+                  class="z-value"><b>ط</b><small>9</small></span><span
+                  class="z-value"><b>ر</b><small>200</small></span><span
+                  class="z-value"><b>غ</b><small>900</small></span><span
+                  class="z-value"><b>د</b><small>4</small></span><span class="z-value"><b>ا</b><small>1</small></span>
+              </div>
+              <div class="z-stats">
+                <div class="z-stat"><strong id="z-abjad-count">9</strong><span>Normalized letters</span></div>
+                <div class="z-stat"><strong id="z-abjad-sum">1589</strong><span>Abjad sum</span></div>
+                <div class="z-stat"><strong>28</strong><span>Western letter values</span></div>
+              </div>
+              <details class="guide-note">
+                <summary>Show the Western abjad table</summary>
+                <div id="z-abjad-table" class="z-values" dir="rtl"><span
+                    class="z-value"><b>ا</b><small>1</small></span><span
+                    class="z-value"><b>ب</b><small>2</small></span><span
+                    class="z-value"><b>ج</b><small>3</small></span><span
+                    class="z-value"><b>د</b><small>4</small></span><span
+                    class="z-value"><b>ه</b><small>5</small></span><span
+                    class="z-value"><b>و</b><small>6</small></span><span
+                    class="z-value"><b>ز</b><small>7</small></span><span
+                    class="z-value"><b>ح</b><small>8</small></span><span
+                    class="z-value"><b>ط</b><small>9</small></span><span
+                    class="z-value"><b>ي</b><small>10</small></span><span
+                    class="z-value"><b>ك</b><small>20</small></span><span
+                    class="z-value"><b>ل</b><small>30</small></span><span
+                    class="z-value"><b>م</b><small>40</small></span><span
+                    class="z-value"><b>ن</b><small>50</small></span><span
+                    class="z-value"><b>ص</b><small>60</small></span><span
+                    class="z-value"><b>ع</b><small>70</small></span><span
+                    class="z-value"><b>ف</b><small>80</small></span><span
+                    class="z-value"><b>ض</b><small>90</small></span><span
+                    class="z-value"><b>ق</b><small>100</small></span><span
+                    class="z-value"><b>ر</b><small>200</small></span><span
+                    class="z-value"><b>س</b><small>300</small></span><span
+                    class="z-value"><b>ت</b><small>400</small></span><span
+                    class="z-value"><b>ث</b><small>500</small></span><span
+                    class="z-value"><b>خ</b><small>600</small></span><span
+                    class="z-value"><b>ذ</b><small>700</small></span><span
+                    class="z-value"><b>ظ</b><small>800</small></span><span
+                    class="z-value"><b>غ</b><small>900</small></span><span
+                    class="z-value"><b>ش</b><small>1000</small></span></div>
+              </details>
+              <div class="z-med-grid"><label>Ascendant sign<select id="z-sign">
+                    <option value="0">Aries / rank 12</option>
+                    <option value="1">Taurus / rank 11</option>
+                    <option value="2">Gemini / rank 10</option>
+                    <option value="3">Cancer / rank 9</option>
+                    <option value="4">Leo / rank 8</option>
+                    <option value="5">Virgo / rank 7</option>
+                    <option value="6">Libra / rank 6</option>
+                    <option value="7">Scorpio / rank 5</option>
+                    <option value="8">Sagittarius / rank 4</option>
+                    <option value="9">Capricorn / rank 3</option>
+                    <option value="10">Aquarius / rank 2</option>
+                    <option value="11">Pisces / rank 1</option>
+                  </select></label><label>Degree within sign, 1–30<input id="z-degree" type="number" min="1" max="30"
+                    value="1"></label><label>First cycle, manual table result<input id="z-first" type="number" min="1"
+                    max="12" value="9"></label><label>Combined letter count, manual<input id="z-count" type="number"
+                    min="1" max="10000" value="93"></label></div>
+              <p class="input-note">The sign and degree are manual historical inputs. No astronomical ascendant is
+                calculated. The first cycle requires the reverse table; it is not inferred from the question’s length.
+              </p>
+              <button class="button" id="z-med-example">Load the recorded 1° Sagittarius example</button>
+              <div id="z-moment-error" class="error" role="alert" hidden=""></div>
+              <div id="z-moment-formula" class="z-formula">Reverse zodiac rank: 4
+                First moment: (1 + 1) × 4 = 8; wrapped to 1–12: 8
+                Second moment: 1 + 4 = 5
+                First cycle: 9 (manual table result)
+                Combined count: 93 ÷ 12 = 7, remainder 9</div>
+              <div id="z-cycle-values" class="z-cycles">
+                <div class="z-cycle"><small>CYCLE 1</small><strong>9</strong></div>
+                <div class="z-cycle"><small>CYCLE 2</small><strong>5</strong></div>
+                <div class="z-cycle"><small>CYCLE 3</small><strong>1</strong></div>
+                <div class="z-cycle"><small>CYCLE 4</small><strong>9</strong></div>
+                <div class="z-cycle"><small>CYCLE 5</small><strong>5</strong></div>
+                <div class="z-cycle"><small>CYCLE 6</small><strong>1</strong></div>
+                <div class="z-cycle"><small>CYCLE 7</small><strong>9</strong></div>
+                <div class="z-cycle"><small>CYCLE 8</small><strong>5</strong></div>
+                <div class="z-cycle"><small>CYCLE 9</small><strong>1</strong></div>
+                <div class="z-cycle"><small>CYCLE 10</small><strong>9</strong></div>
+                <div class="z-cycle"><small>CYCLE 11</small><strong>5</strong></div>
+                <div class="z-cycle"><small>CYCLE 12</small><strong>1</strong></div>
+              </div>
+              <p id="z-cycle-context" class="input-note">Each new cycle adds 8, then wraps to 1–12. The sequence repeats
+                after 3 cycles. These numbers do not by themselves specify the letter lookups.</p>
+              <div class="z-research-note">The text’s recorded example supplies first cycle 9 and combined count 93.
+                Changing the inputs explores the stated arithmetic; it does not complete the missing letter lookups or
+                produce a verse.</div>
+              <details class="guide-note" open="">
+                <summary>What the research establishes</summary>
+                <table class="z-research-table">
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>State</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Western letter values</td>
+                      <td>Specified and implemented.</td>
+                    </tr>
+                    <tr>
+                      <td>Moment values and cycle recurrence</td>
+                      <td>Specified and implemented with a manual first cycle.</td>
+                    </tr>
+                    <tr>
+                      <td>Full reverse-table traversal</td>
+                      <td>Unresolved. Link reports missing columns and inconsistent lookups.</td>
+                    </tr>
+                    <tr>
+                      <td>Order of operations in each cycle</td>
+                      <td>Recorded for one example; its general selection rule is unknown.</td>
+                    </tr>
+                    <tr>
+                      <td>General production of a rhymed answer</td>
+                      <td>Not established by the sources consulted.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </details>
+              <div class="z-source-list"><a
+                  href="https://d13.documenta.de/research/assets/Uploads/DavidLinkScramblingTruth2010100dpi.pdf#page=5"
+                  target="_blank" rel="noopener">Link, 2010: letter values, p. 219; cycles, pp. 243–245 ↗</a><a
+                  href="https://d13.documenta.de/research/assets/Uploads/DavidLinkScramblingTruth2010100dpi.pdf#page=38"
+                  target="_blank" rel="noopener">Link: reverse table and unresolved sequence, pp. 252–255 ↗</a><a
+                  href="https://www.muslimphilosophy.com/ik/Muqaddimah/Chapter6/Ch_6_28.htm" target="_blank"
+                  rel="noopener">Ibn Khaldūn, Muqaddimah VI.28, Rosenthal translation ↗</a></div>
+            </div>
+
+            <div id="z-world" hidden="">
+              <div class="panel-top">
+                <p class="eyebrow">Ibn Khaldūn / Muqaddimah VI.28</p><span class="source-tag">RECORDED EXAMPLE
+                  REPLAY</span>
+              </div>
+              <h2>Zā’irjat al-ʿālam.<br>The world-wheel.</h2>
+              <p class="body-copy">Follow the question and fifteen-cycle sequence in Ibn Khaldūn’s account. Chord
+                selection, poem selection, arithmetic, and the final rearrangement run in your browser. Reverse-table
+                results are supplied from the recorded example.</p>
+              <div class="world-question"><span class="eyebrow">THE RECORDED QUESTION</span>
+                <h3>Is the Zā’irja a recent or an ancient science?</h3>
+                <p>Ascendant: first degree of Sagittarius. Reverse zodiac rank: 4. Chord letters: 73. Question letters:
+                  20. Combined count: 93.</p>
+              </div>
+              <div class="world-parameters"><span>Moment I <b>8</b></span><span>Moment II <b>5</b></span><span>First
+                  cycle <b>9</b></span></div>
+              <div class="world-controls"><button class="button" id="world-prev" disabled="">← Previous</button><button
+                  class="button dark" id="world-play">Play the account</button><button class="button"
+                  id="world-next">Next →</button><button class="button" id="world-finish">Show final
+                  rearrangement</button></div>
+              <label class="field-label" for="world-progress">Position in the account</label><input id="world-progress"
+                type="range" min="0" max="16" step="1" value="0">
+              <div id="world-cycles" class="world-cycle-picker" role="group"
+                aria-label="Select initialization, cycle, or final rearrangement"><button aria-pressed="true"
+                  aria-label="Go to SETUP">SETUP</button><button aria-pressed="false"
+                  aria-label="Go to I">I</button><button aria-pressed="false" aria-label="Go to II">II</button><button
+                  aria-pressed="false" aria-label="Go to III">III</button><button aria-pressed="false"
+                  aria-label="Go to IV">IV</button><button aria-pressed="false" aria-label="Go to V">V</button><button
+                  aria-pressed="false" aria-label="Go to VI">VI</button><button aria-pressed="false"
+                  aria-label="Go to VII">VII</button><button aria-pressed="false"
+                  aria-label="Go to VIII">VIII</button><button aria-pressed="false"
+                  aria-label="Go to IX">IX</button><button aria-pressed="false" aria-label="Go to X">X</button><button
+                  aria-pressed="false" aria-label="Go to XI">XI</button><button aria-pressed="false"
+                  aria-label="Go to XII">XII</button><button aria-pressed="false"
+                  aria-label="Go to R1">R1</button><button aria-pressed="false" aria-label="Go to R2">R2</button><button
+                  aria-pressed="false" aria-label="Go to R3">R3</button><button aria-pressed="false"
+                  aria-label="Go to FINAL">FINAL</button></div>
+              <div class="world-cycle-head"><span class="eyebrow" id="world-current-label">INITIALIZATION</span>
+                <h3 id="world-current-title">Prepare the three artifacts.</h3>
+                <p id="world-current-copy">Take the selected chord letters, append the recorded question letters, set
+                  the moment values, and establish the first cycle from the reported table search.</p>
+              </div>
+              <div class="world-pair-legend"><span class="computed">Calculated tape / poem read</span><span
+                  class="recorded">Recorded table value</span><span class="exception">Source exception</span></div>
+              <div id="world-operations" class="world-operations" aria-live="polite">
+                <div class="world-initial-formula">73 + 20 = 93
+                  93 ÷ 12 = 7, remainder 9
+                  (1 + 1) × 4 = 8
+                  1 + 4 = 5
+                  Recorded table search: 3 groups
+                  3 × 3 = 9</div>
+                <p class="world-explanation">The initial search through the reverse table is supplied by the text. Its
+                  three-group result is data; the square of three is computed.</p>
+              </div>
+              <div class="world-output"><span class="eyebrow">LETTERS ACCUMULATED IN CYCLE ORDER</span>
+                <div id="world-output-letters" class="world-letter-output" dir="ltr"></div>
+                <p id="world-output-count">0 / 47 letters. Border colors identify the origin of each letter.</p>
+              </div>
+              <div id="world-final" hidden=""><span class="eyebrow">FINAL TRANSPOSITION / 24 + 23</span>
+                <p class="world-explanation">Split the 47-letter tape into 24 and 23 letters. Take one from each half in
+                  turn. The source words below are shown only when the calculated letters match their recorded sequence.
+                </p>
+                <div id="world-interleave" class="world-interleave"></div>
+                <div id="world-verse" class="world-verse" dir="rtl" lang="ar"></div>
+                <p id="world-verse-note" class="input-note"></p>
+              </div>
+              <label class="world-strict"><input id="world-strict" type="checkbox"> Compare strict chord removal</label>
+              <p id="world-audit" class="world-audit">Source replay: all fifteen recorded cycle outputs match. Eighteen
+                reverse-table/surface outcomes are supplied from the text. R1 preserves its reported repeated alif as an
+                explicit exception. This is one recorded case, not a general answer generator.</p>
+              <div class="button-row"><button class="button" id="world-export">Export the full trace</button><a
+                  class="button" href="https://www.muslimphilosophy.com/ik/Muqaddimah/Chapter6/Ch_6_28.htm"
+                  target="_blank" rel="noopener">Read Ibn Khaldūn’s account ↗</a></div>
+              <details class="guide-note">
+                <summary>What executes, and what is supplied?</summary>
+                <p>The app calculates all chord selections and removals from a transcribed 73-letter tape, reads the
+                  indexed key poem, converts the recorded numeric values, and performs the final 24+23 transposition.
+                </p>
+                <p>Eighteen emitted letters depend on reverse-table or surface values supplied by the account. Those
+                  values are marked as recorded. This app does not reconstruct all 7,095 table fields or infer a general
+                  rule for other questions.</p>
+                <p>For R1 the text repeats an alif already removed earlier. The replay preserves that reported result
+                  and marks the exception. The strict comparison instead emits the bāʾ reached by removing each selected
+                  letter once.</p>
+                <p>The initial table search is also recorded: three groups are traversed before the selected letter,
+                  giving 3 × 3 = 9. Its full traversal is not independently regenerated.</p><a
+                  href="https://d13.documenta.de/research/assets/Uploads/DavidLinkScramblingTruth2010100dpi.pdf#page=42"
+                  target="_blank" rel="noopener">Compare Link’s compact operation trace, figure 29 ↗</a>
+              </details>
+            </div>
+            <div id="z-guide" hidden="">
+              <div class="panel-top">
+                <p class="eyebrow">Ibn Khaldūn’s Muqaddimah</p><span class="source-tag">GUIDED STUDY</span>
+              </div>
+              <h2>From a question<br>to a verse.</h2>
+              <p class="body-copy">The slides describe a practice that combines a question, an astrological diagram,
+                letter operations, and a poetic answer. Follow the account one step at a time.</p>
+              <div class="study-progress" id="study-progress" role="group" aria-label="Zā’irja study steps"></div>
+              <div class="study-body"><span class="eyebrow" id="study-number">STEP 01 / 05</span>
+                <h3 id="study-title"></h3>
+                <p id="study-copy"></p>
+                <div id="question-work"><label class="field-label" for="zairja-question">A question to
+                    fragment</label><input id="zairja-question" dir="auto" maxlength="160" value="هل تمطر غدا"
+                    placeholder="Write a question in any language">
+                  <p class="input-note">The guide uses Arabic. Other languages here are a modern visual exercise.</p>
+                </div>
+                <div id="study-example" class="study-example" hidden=""></div>
+                <p id="study-boundary" class="study-boundary"></p>
+                <div class="button-row"><button class="button" id="study-prev">← Previous</button><button
+                    class="button dark" id="study-next">Next step →</button></div>
+              </div>
+              <p class="source-footnote">Slides 16–21. Manuscript references include MS Ahmet III 3042 and MS Damad
+                Ibrahim 863.</p>
+              <details class="guide-note">
+                <summary>Why this is a study view</summary>
+                <p>The slides summarize the process. They do not specify a complete chord table, the cycle intervals, or
+                  a reproducible rule for turning the final letters into a verse.</p>
+                <p>This app therefore lets you fragment a question and inspect the documented stages. It does not
+                  calculate an astrological answer.</p><a
+                  href="https://www.torch.ox.ac.uk/files/writingtechnologiesworkshoppppdf#page=16"
+                  target="_blank" rel="noopener">Read the Zā’irja slides ↗</a>
+              </details>
+            </div>
+          </section>
+        </div>
+      </div>
+      <section class="letter-study" id="letter-study">
+        <div class="section-label">
+          <div><span class="eyebrow">Follow the substitution</span>
+            <h3>One letter at a time.</h3>
+          </div>
+          <div class="trace-controls"><button id="trace-prev" aria-label="Inspect previous letter"
+              disabled="">←</button><span id="trace-position">1 / 5</span><button id="trace-next"
+              aria-label="Inspect next letter">→</button></div>
+        </div>
+        <div id="trace" class="trace-list" aria-label="Plain text and cipher text letter pairs"><button
+            class="trace-pair active" aria-label="S maps to q, key Bk"
+            aria-pressed="true"><span>S</span><span>↓</span><span>q</span></button><button class="trace-pair"
+            aria-label="A maps to g, key Bk"
+            aria-pressed="false"><span>A</span><span>↓</span><span>g</span></button><button class="trace-pair"
+            aria-label="L maps to z, key Bk"
+            aria-pressed="false"><span>L</span><span>↓</span><span>z</span></button><button class="trace-pair"
+            aria-label="V maps to h, key Bk"
+            aria-pressed="false"><span>V</span><span>↓</span><span>h</span></button><button class="trace-pair"
+            aria-label="E maps to p, key Bk" aria-pressed="false"><span>E</span><span>↓</span><span>p</span></button>
+        </div>
+        <p id="trace-note" class="input-note">Selected alignment: B ↔ k. Click any pair to see it on the disk.</p>
+      </section>
+      <section class="context-row">
+        <div class="context-title"><span class="eyebrow">Three circles of inquiry</span>
+          <h2>A shared shape.<br>Different purposes.</h2>
+        </div>
+        <div><span class="context-number">01 / CONCEAL</span>
+          <h3>Alberti</h3>
+          <p>A reversible substitution changes how a message is written. Knowing the alignment lets a reader recover it.
+          </p>
+        </div>
+        <div><span class="context-number">02 / COMBINE</span>
+          <h3>Llull</h3>
+          <p>Letters stand for concepts. Rotating the rings brings different terms into a relationship to be examined.
+          </p>
+        </div>
+        <div><span class="context-number">03 / DIVINE</span>
+          <h3>Zā’irja</h3>
+          <p>Explore Lane’s later table and replay the world-wheel example recorded by Ibn Khaldūn.</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div><strong>Circling the Truth</strong>
+        <p>Based on the supplied workshop by Beatrice Bottomley &amp; Arianna Dalla Costa, 4 February 2022.</p>
+        <p>Zā’irja source: <a href="https://www.muslimphilosophy.com/ik/Muqaddimah/Chapter6/Ch_6_28.htm" target="_blank"
+            rel="noopener">Ibn Khaldūn, Muqaddimah VI.28 ↗</a></p>
+      </div>
+      <div>
+        <p>A modern interface to historical instruments.</p><button class="text-button" id="footer-sources">Sources
+          &amp; reconstruction notes ↗</button>
+      </div>
+    </footer>
+  </div>
+  <dialog id="sources-dialog">
+    <div class="dialog-header"><span class="eyebrow">The reading room</span><button id="sources-close"
+        aria-label="Close source material">×</button></div>
+    <h2>Built from your guides.</h2>
+    <p>The cipher alphabet was transcribed from the cutout. The instructions define the key markers and changing-key
+      examples. The slides supply Llull’s term table and the Zā’irja study sequence.</p>
+    <a class="source-link"
+      href="https://web.archive.org/web/20250806142409/https://www.torch.ox.ac.uk/files/circlingaroundthetruthdisccutoutpdf"
+      target="_blank" rel="noopener"><span>01 / Disk cutout<small>The two 24-symbol alphabets</small></span>↗</a>
+    <a class="source-link"
+      href="https://web.archive.org/web/20250808121950/https://www.torch.ox.ac.uk/files/cipherdiskinstructionspdf"
+      target="_blank" rel="noopener"><span>02 / Cipher disk instructions<small>Alignment, substitution, and key
+          changes</small></span>↗</a>
+    <a class="source-link"
+      href="https://web.archive.org/web/20261019162131/https://media.defense.gov/2021/Jun/07/2002736744/-1/-1/0/NCMCIPHERCRAFT_FINAL.PDFf"
+      target="_blank" rel="noopener"><span>03 / Making DIY cipher disk by defense.gov<small>Alternative
+          source</small></span>↗</a>
+    <a class="source-link"
+      href="https://www.torch.ox.ac.uk/circling-around-the-truth-rotating-symbols-in-the-mechanization-of-thought-and-reality"
+      target="_blank" rel="noopener"><span>04 / Circling around the Truth<small>Bottomley &amp; Dalla Costa, 4 February
+          2022</small></span>↗</a>
+    <a class="source-link" href="https://www.youtube.com/watch?v=bXGBOzsxRjY" target="_blank" rel="noopener"><span>05 /
+        Video of Circling around the Truth<small>Bottomley &amp; Dalla Costa, March 2022</small></span>↗</a>
+
+    <p class="source-footnote">The source cutout uses a lower-case v on the inner disk. The app keeps that symbol. J and
+      U are normalized to I and V for plain-text input. Spaces and punctuation are omitted as in the guide’s examples.
+      The Llull prompts and the Zā’irja letter arrangement are modern teaching aids.</p>
+  </dialog>
+
+</body>
+
+</html>
